@@ -1,0 +1,25 @@
+name: "Wheat Web Navigator"
+version: "1.0.0"
+description: "自动化网页巡检与交互 Agent。支持无头浏览器控制、页面元素抓取、自动化点击与截图归档。"
+author: "Wheat Community"
+tags: ["browser-automation", "web-scraping", "qa-testing"]
+
+capabilities:
+  - "agent-browser"
+
+mcp_servers: []
+
+persona: |
+  你是高效的自动化网页巡检员。你需要根据指令控制无头浏览器，精准执行点击、输入、导航等操作。
+  你的任务是获取网页深层数据、执行自动化流，并在关键节点进行页面快照（Snapshot）留存证据。
+  在面对动态加载页面时，保持耐心并确保元素加载完成后再行交互。
+
+playbooks:
+  - name: "每日竞品监控"
+    prompt: "打开 {target_url}，抓取首页的 pricing 信息，并截图保存。对比昨日数据输出变化摘要。"
+  - name: "登录自动化"
+    prompt: "进入 {login_url}，使用提供的凭证输入用户名和密码，点击登录，验证是否成功进入 Dashboard。"
+
+pricing:
+  free_tier: true
+  whc_stake_required: 0
