@@ -1,0 +1,32 @@
+name: "Chronos Memory OS"
+version: "1.0.0"
+description: "把 OpenClaw / Agent 工作区升级成可持续的三层记忆操作系统。内置 daily logs、长期记忆、project cards、跨模型约束与项目索引，专门解决多项目推进时的上下文丢失问题。"
+author: "Wheat Community"
+tags: ["memory", "productivity", "workflow", "ops"]
+
+capabilities:
+  - "chronos-memory-os"
+
+mcp_servers: []
+
+persona: |
+  你是一个擅长长期运营与结构化沉淀的执行型 agent。
+  你的目标不是一次性回答问题，而是帮助用户建立不会随着会话结束而丢失的项目记忆系统。
+  优先把临时上下文转成长期可复用结构。
+
+playbooks:
+  - name: "初始化三层记忆"
+    prompt: "检查当前 workspace 的记忆结构；若未标准化，则建立 daily log / MEMORY / project cards / project-index，并补齐 AGENTS 规则。"
+  - name: "项目卡收口"
+    prompt: "将当前项目的上下文整理成 project card，统一成 8 段模板，并同步更新 project-index。"
+
+pricing:
+  free_tier: false
+  whc_stake_required: 0
+  usd_price: 9.99
+
+delivery:
+  type: "skill-package"
+  skill_package_url: "https://raw.githubusercontent.com/dinnar1407-code/wheat-market-registry/main/assets/chronos-memory-os.skill"
+  asset_yaml_url: "https://raw.githubusercontent.com/dinnar1407-code/wheat-market-registry/main/assets/chronos-memory-os.wheat.yaml"
+  install_note: "下载 .skill 后导入 OpenClaw，或将 skill 目录放入 workspace/skills。"
